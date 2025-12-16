@@ -15,17 +15,17 @@ It's possible to skip this step, but it's highly recommended to keep your coding
 On Linux:
 
 ```bash
-$ python3 -m venv swd
-$ cd swd
-$ source bin/activate
+python3 -m venv swd
+cd swd
+source bin/activate
 ```
 
 On Windows:
 
 ```bash
-$ python -m venv swd
-$ cd swd
-$ .\Scripts\activate
+python -m venv swd
+cd swd
+.\Scripts\activate
 ```
 
 #### Forking and Dependencies
@@ -33,9 +33,9 @@ $ .\Scripts\activate
 Fork the repository and clone it.
 
 ```bash
-$ git clone https://github.com/YOUR_USERNAME/swd_django src
-$ cd src/swd
-$ pip install -r requirements.txt
+git clone https://github.com/YOUR_USERNAME/swd_django src
+cd src/swd
+pip install -r requirements.txt
 ```
 #### Database
 
@@ -46,27 +46,27 @@ $ pip install -r requirements.txt
 * Go to swd/config.py and change ```PRODUCTION``` and ```EMAIL_PROD``` to ```False```
 * While committing any changes, make sure to change ```PRODUCTION``` and ```EMAIL_PROD``` variable to ```True``` again
 
-***Note:*** When setting up the environment make sure you run ```$ python manage.py setup_keys```, this will create ```dev_info.py```.
+***Note:*** When setting up the environment make sure you run ```python manage.py setup_keys```, this will create ```dev_info.py```.
 This needs to be done once only. This creates secret key and other important variables for the project. This will overwrite and previous file with same name and render 
 any previous database and session invalid.
 
 ```bash
-$ python manage.py setup_keys
-$ python manage.py migrate
+python manage.py setup_keys
+python manage.py migrate
 ```
 
 * For specific app migrations, especially for gate_security and main_mcn apps, run:
 
 ```bash
-$ python manage.py makemigrations gate_security main mcn
-$ python manage.py migrate
+python manage.py makemigrations gate_security main mcn
+python manage.py migrate
 
 ```
 
 * Create a superuser for admin controls (accessible at localhost:8000/admin)
 
 ```bash
-$ python manage.py createsuperuser
+python manage.py createsuperuser
 ```
 
 ## Populate the database
@@ -74,7 +74,7 @@ $ python manage.py createsuperuser
 * To generate dummy data for the website, use the following script
 
 ```bash
-$ python populate_data.py
+python populate_data.py
 ```
 
 * this will create a super user with username as ```admin``` and password as ```password```
@@ -84,7 +84,7 @@ $ python populate_data.py
 * Run the server and access at localhost:8000
 
 ```bash
-$ python manage.py runserver
+python manage.py runserver
 ```
 
 ## Logging In
